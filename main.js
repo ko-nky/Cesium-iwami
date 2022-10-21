@@ -19,7 +19,7 @@ viewer.zoomTo(baseTileset, new Cesium.HeadingPitchRange(0, -0.5, 0));
 Sandcastle.addToggleButton("Show hatmap", true, function (
   checked
 ) {
-	picking = checked;
+	var picking = checked;
     if (picking){
       baseTileset.show = checked;
       colTileset.show = checked;
@@ -28,55 +28,4 @@ Sandcastle.addToggleButton("Show hatmap", true, function (
       colTileset.show = checked;
    }
 });
-
-//function addBillboard() {
-//  Sandcastle.declare(addBillboard);
-
-//  viewer.entities.add({
-//    position: Cesium.Cartesian3.fromDegrees(140.274380, 39.664302),
-//    billboard: {
-//      image: "./col_labal.png",
-//    },
-//  });
-//}
-
-//Sandcastle.addToolbarMenu([
-//  {
-//    text: "Add billboard",
-//    onselect: function () {
-//      addBillboard();
-//      Sandcastle.highlight(addBillboard);
-//    },
-//  },
-//]);
-
-//var billboards = primitives.add(new Cesium.BillboardCollection());
-
-//billboards.add({
-//    image : "./col_label.png",
-//    position : Cesium.Cartesian3.fromDegrees(140.274380, 39.664302)
-//});
-
-var entity = viewer.entities.add({
-      position: Cesium.Cartesian3.fromDegrees(140.274380, 39.664302),
-      billboard: {
-        image: './col_label.png',
-      }
-});
-
-
-
-var show = true;
-Sandcastle.addToolbarButton('toggle color label', function() {
-    show = !show;
-    entity.get.show = show;
-//    for (var i = 0; i < billboards.length; ++i) {
-//        billboards.get(i).show = show;
-//    }
-});
-
-
-//  viewer.zoomTo(tileset, new Cesium.HeadingPitchRange(0, -0.5, 0));
-console.log(tileset.dynamicScreenSpaceErrorDensity + '#n' + tileset.dynamicScreenSpaceErrorFactor);
-
 
